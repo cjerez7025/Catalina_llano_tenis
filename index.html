@@ -15,12 +15,20 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #c94b4b 0%, #4b134f 100%);
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 15px;
             position: relative;
             overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #c94b4b 0%, #4b134f 100%);
+            z-index: -10;
         }
 
         /* Animaciones temáticas por mes - UNA IMPRESIONANTE POR MES */
@@ -288,6 +296,9 @@
             width: 100%;
             position: relative;
             z-index: 10;
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
 
         .card {

@@ -19,6 +19,218 @@
             justify-content: center;
             align-items: center;
             padding: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animaciones temáticas por mes - UNA IMPRESIONANTE POR MES */
+        .theme-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Diciembre - Trineo del Viejito Pascuero con estela mágica */
+        .santa-sleigh {
+            position: fixed;
+            font-size: 60px;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+            animation: sleigh-journey 12s ease-in-out infinite;
+        }
+
+        @keyframes sleigh-journey {
+            0% { 
+                left: -100px;
+                top: 20%;
+                transform: rotate(-10deg) scale(0.8);
+            }
+            25% {
+                left: 30%;
+                top: 10%;
+                transform: rotate(5deg) scale(1.2);
+            }
+            50% { 
+                left: 60%;
+                top: 25%;
+                transform: rotate(-5deg) scale(1);
+            }
+            75% {
+                left: 85%;
+                top: 15%;
+                transform: rotate(10deg) scale(1.1);
+            }
+            100% { 
+                left: 120%;
+                top: 30%;
+                transform: rotate(-10deg) scale(0.8);
+            }
+        }
+
+        .sparkle-trail {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: gold;
+            border-radius: 50%;
+            animation: sparkle-fade 1s ease-out forwards;
+            box-shadow: 0 0 15px gold;
+        }
+
+        @keyframes sparkle-fade {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) translateY(30px);
+            }
+        }
+
+        /* Septiembre - Bandera chilena ondeante gigante */
+        .flag-chile {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            font-size: 100px;
+            animation: wave-flag 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 30px rgba(0, 57, 166, 0.5));
+        }
+
+        @keyframes wave-flag {
+            0%, 100% { transform: rotate(-5deg) scale(1); }
+            25% { transform: rotate(5deg) scale(1.1); }
+            50% { transform: rotate(-3deg) scale(1.05); }
+            75% { transform: rotate(7deg) scale(1.08); }
+        }
+
+        /* Octubre - Calabaza fantasmagórica girando */
+        .spooky-pumpkin {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            font-size: 120px;
+            transform: translate(-50%, -50%);
+            animation: spooky-spin 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(255, 140, 0, 0.8));
+        }
+
+        @keyframes spooky-spin {
+            0%, 100% { 
+                transform: translate(-50%, -50%) rotate(0deg) scale(1);
+                filter: drop-shadow(0 0 30px rgba(255, 140, 0, 0.8));
+            }
+            50% { 
+                transform: translate(-50%, -50%) rotate(360deg) scale(1.3);
+                filter: drop-shadow(0 0 50px rgba(138, 43, 226, 0.9));
+            }
+        }
+
+        /* Enero/Febrero - Sol radiante pulsante */
+        .mega-sun {
+            position: fixed;
+            top: 80px;
+            right: 80px;
+            font-size: 100px;
+            animation: sun-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes sun-pulse {
+            0%, 100% { 
+                transform: rotate(0deg) scale(1);
+                filter: drop-shadow(0 0 30px rgba(255, 200, 0, 0.8));
+            }
+            50% { 
+                transform: rotate(180deg) scale(1.3);
+                filter: drop-shadow(0 0 60px rgba(255, 150, 0, 1));
+            }
+        }
+
+        /* Marzo - Lápiz escribiendo arcoíris */
+        .rainbow-pencil {
+            position: fixed;
+            bottom: 100px;
+            left: -100px;
+            font-size: 80px;
+            animation: write-rainbow 8s linear infinite;
+        }
+
+        @keyframes write-rainbow {
+            0% { 
+                left: -100px;
+                transform: rotate(-30deg);
+            }
+            100% { 
+                left: calc(100% + 100px);
+                transform: rotate(-30deg);
+            }
+        }
+
+        .rainbow-line {
+            position: fixed;
+            bottom: 120px;
+            height: 8px;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            animation: draw-line 8s linear infinite;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes draw-line {
+            0% {
+                left: 0;
+                width: 0;
+            }
+            100% {
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        /* Mayo - Ola gigante */
+        .mega-wave {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, 
+                rgba(0, 119, 190, 0.6) 0%,
+                rgba(0, 168, 232, 0.4) 50%,
+                transparent 100%);
+            animation: ocean-wave 4s ease-in-out infinite;
+        }
+
+        @keyframes ocean-wave {
+            0%, 100% {
+                transform: translateX(0) scaleY(1);
+            }
+            50% {
+                transform: translateX(-50px) scaleY(1.2);
+            }
+        }
+
+        .anchor-ship {
+            position: fixed;
+            bottom: 100px;
+            font-size: 80px;
+            animation: ship-sail 10s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes ship-sail {
+            0% {
+                left: -100px;
+                transform: rotate(-5deg);
+            }
+            50% {
+                left: 50%;
+                transform: rotate(5deg);
+            }
+            100% {
+                left: 110%;
+                transform: rotate(-5deg);
+            }
         }
 
         .container {
@@ -393,6 +605,8 @@
     </style>
 </head>
 <body>
+    <div id="theme-container"></div>
+    
     <div class="container">
         <!-- Tarjeta Principal -->
         <div class="card">
@@ -528,6 +742,106 @@
     </div>
 
     <script>
+        // Sistema de decoraciones temáticas por mes - UNA IMPRESIONANTE
+        function addThemeDecorations() {
+            const month = new Date().getMonth() + 1; // 1-12
+            const container = document.getElementById('theme-container');
+            
+            switch(month) {
+                case 12: // Diciembre - Trineo mágico del Viejito Pascuero
+                    addMagicSleigh(container);
+                    break;
+                    
+                case 9: // Septiembre - Bandera chilena gigante
+                    addChileanFlag(container);
+                    break;
+                    
+                case 10: // Octubre - Calabaza fantasmagórica
+                    addSpookyPumpkin(container);
+                    break;
+                    
+                case 1: // Enero - Sol radiante
+                case 2: // Febrero - Sol radiante
+                    addMegaSun(container);
+                    break;
+                    
+                case 3: // Marzo - Lápiz escribiendo arcoíris
+                    addRainbowPencil(container);
+                    break;
+                    
+                case 5: // Mayo - Barco navegando en olas
+                    addOceanShip(container);
+                    break;
+            }
+        }
+        
+        function addMagicSleigh(container) {
+            const sleigh = document.createElement('div');
+            sleigh.className = 'santa-sleigh theme-decoration';
+            sleigh.innerHTML = '🎅🛷✨';
+            container.appendChild(sleigh);
+            
+            // Crear estela de estrellas mágicas
+            setInterval(() => {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle-trail theme-decoration';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 40 + '%';
+                container.appendChild(sparkle);
+                
+                setTimeout(() => sparkle.remove(), 1000);
+            }, 200);
+        }
+        
+        function addChileanFlag(container) {
+            const flag = document.createElement('div');
+            flag.className = 'flag-chile theme-decoration';
+            flag.innerHTML = '🇨🇱';
+            container.appendChild(flag);
+        }
+        
+        function addSpookyPumpkin(container) {
+            const pumpkin = document.createElement('div');
+            pumpkin.className = 'spooky-pumpkin theme-decoration';
+            pumpkin.innerHTML = '🎃';
+            container.appendChild(pumpkin);
+        }
+        
+        function addMegaSun(container) {
+            const sun = document.createElement('div');
+            sun.className = 'mega-sun theme-decoration';
+            sun.innerHTML = '☀️';
+            container.appendChild(sun);
+        }
+        
+        function addRainbowPencil(container) {
+            const rainbow = document.createElement('div');
+            rainbow.className = 'rainbow-line theme-decoration';
+            container.appendChild(rainbow);
+            
+            const pencil = document.createElement('div');
+            pencil.className = 'rainbow-pencil theme-decoration';
+            pencil.innerHTML = '✏️';
+            container.appendChild(pencil);
+        }
+        
+        function addOceanShip(container) {
+            const wave = document.createElement('div');
+            wave.className = 'mega-wave theme-decoration';
+            container.appendChild(wave);
+            
+            const ship = document.createElement('div');
+            ship.className = 'anchor-ship theme-decoration';
+            ship.innerHTML = '⛵';
+            container.appendChild(ship);
+        }
+        
+        // Eliminar funciones antiguas no usadas
+        
+        // Inicializar decoraciones al cargar la página
+        window.addEventListener('DOMContentLoaded', addThemeDecorations);
+        
+        // Funciones existentes
         function copyIndividualData(elementId) {
             const element = document.getElementById(elementId);
             const text = element.textContent;
